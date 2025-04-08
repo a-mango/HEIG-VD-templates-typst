@@ -1,0 +1,7 @@
+[package]
+name = "heig-vd-summary"
+version = "1.0.0"
+entrypoint = "lib.typ"
+authors = ["acm <acm@lambda0.net"]
+license = "MIT-0"
+description = "A course summary template for HEIG-VD"

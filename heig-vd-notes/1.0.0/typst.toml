@@ -1,0 +1,7 @@
+[package]
+name = "heig-vd-notes"
+version = "1.0.0"
+entrypoint = "lib.typ"
+authors = ["acm <acm@lambda0.net"]
+license = "MIT-0"
+description = "A course notes template for HEIG-VD"
