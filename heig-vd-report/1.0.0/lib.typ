@@ -36,7 +36,6 @@
     #it.body
   ]
 
-  show figure: set block(inset: (top: 0.5em, bottom: 1em))
   v(1em)
   set align(left)
   content
