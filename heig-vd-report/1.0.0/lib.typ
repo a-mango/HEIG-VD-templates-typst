@@ -20,13 +20,31 @@
   set align(center)
   text(17pt, title)
 
-  let count = authors.len()
-  let ncols = calc.min(count, 3)
-  grid(columns: (1fr,) * ncols, row-gutter: 24pt, ..authors.map(author => [
-      #author.name \
-      #author.affiliation \
-      #link("mailto:" + author.email)
-    ]))
+  if type(authors) == dictionary {
+    // Handle single author case
+    grid(
+      columns: (1fr,),
+      row-gutter: 24pt,
+      [
+      #authors.name \
+      #authors.affiliation \
+      #link("mailto:" + authors.email)
+    ]
+    )
+  } else {
+    // Handle multiple authors case
+    let count = authors.len()
+    let ncols = calc.min(count, 3)
+    grid(
+      columns: (1fr,) * ncols,
+      row-gutter: 24pt,
+      ..authors.map(author => [
+        #author.name \
+        #author.affiliation \
+        #link("mailto:" + author.email)
+      ])
+    )
+  }
 
   show heading: it => [
     #set par(
