@@ -1,15 +1,18 @@
 # HEIG-VD Typst templates
 
+This repository contains [Typst templates](https://typst.app/docs/tutorial/making-a-template/)
+developed for documents produced at the
+[School of Engineering and Management Vaud (HEIG-VD)](https://www.heig-vd.ch/).
+
 ## Installation
 
-Symlink the templates you wish to use to your `~/.local/share/typst/packages/local` folder:
+Either copy the templates manually or symlink the repository to the
+`~/.local/share/typst/packages/local` folder:
 
 ```bash
-TYPSTDIR="$HOME/.local/share/typst/packages/local"
+TYPSTDIR="$HOME/.local/share/typst/packages"
 mkdir -p $TYPSTDIR
-ln -s heig-vd-summary $TYPSTDIR/heig-vd-summary
-ln -s heig-vd-notes $TYPSTDIR/heig-vd-notes
-ln -s heig-vd-report $TYPSTDIR/heig-vd-report
+ln -s <REPO_DIR> $TYPSTDIR/local
 ```
 
 ## Usage
@@ -17,7 +20,8 @@ ln -s heig-vd-report $TYPSTDIR/heig-vd-report
 The use the templates, add the following preamble to your Typst document:
 
 ```typst
-#import "@local/heig-vd-summary:1.0.0": * // This also imports a few useful macros
+#import "@local/common:1.0.0": *          // Import useful macros
+#import "@local/heig-vd-summary:1.1.0": * // Import the template
 #show: conf.with(
   title: "Document title",
   author: "Document author",
@@ -26,7 +30,7 @@ The use the templates, add the following preamble to your Typst document:
 )
 ```
 
-_Tip_: don't forget to set the writing language as it's not done by default:
+**Tip**: don't forget to set the writing language if you're not using English:
 
 ```typst
 #set text(lang: "fr")
@@ -34,4 +38,4 @@ _Tip_: don't forget to set the writing language as it's not done by default:
 
 ## Contributing
 
-Issues, requests for improvements and PRs to the project are welcome.
+Issues, requests for improvements and PRs are welcome.
