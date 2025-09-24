@@ -1,0 +1,7 @@
+[package]
+name = "common"
+version = "1.0.0"
+entrypoint = "lib.typ"
+authors = ["Aubry Mangold <aubry.mangold@heig-vd.ch>"]
+license = "MIT-0"
+description = "Common Typst utility functions"
