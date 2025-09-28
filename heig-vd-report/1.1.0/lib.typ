@@ -25,6 +25,7 @@
     // Handle single author case
     grid(
       columns: (1fr,),
+      align: center,
       row-gutter: 24pt,
       [
         #authors.name \
@@ -38,6 +39,7 @@
     let ncols = calc.min(count, 3)
     grid(
       columns: (1fr,) * ncols,
+      align: center,
       row-gutter: 24pt,
       ..authors.map(author => [
         #author.name \
